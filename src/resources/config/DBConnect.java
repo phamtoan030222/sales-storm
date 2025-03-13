@@ -22,7 +22,7 @@ public class DBConnect {
                 String dbUser = "sa",
                         dbPass = "123456789",
                         dbUrl = "jdbc:sqlserver://localhost:1433;" +
-                                "databaseName=sales_storm;" +
+                                "databaseName=QuanLyBanHang;" +
                                 "encrypt=true;trustServerCertificate=true;";
                 conn = DriverManager.getConnection(dbUrl, dbUser, dbPass);
                 System.out.println("Kết nối thành công");
