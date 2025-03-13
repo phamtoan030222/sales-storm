@@ -1,0 +1,367 @@
+CREATE DATABASE QuanLyBanHang;
+GO
+
+USE [QuanLyBanHang]
+GO
+/****** Object:  Table [dbo].[HoaDon]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDon](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[IdKhachHang] [int] NOT NULL,
+	[IdNhanVien] [int] NOT NULL,
+	[NgayMuaHang] [datetime] NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonChiTiet]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonChiTiet](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[IdSPCT] [int] NOT NULL,
+	[IdHoaDon] [int] NOT NULL,
+	[SoLuong] [int] NOT NULL,
+	[DonGia] [decimal](18, 2) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhachHang](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](100) NOT NULL,
+	[SDT] [varchar](15) NOT NULL,
+	[MaKH] [varchar](20) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+	[DiaChi] [nvarchar](255) NULL,
+	[IDLoaiKH] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KichThuoc]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KichThuoc](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ma] [varchar](10) NOT NULL,
+	[Ten] [nvarchar](20) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LoaiKhachHang]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LoaiKhachHang](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[maLoaiKH] [varchar](20) NOT NULL,
+	[tenLoaiKhachHang] [nvarchar](50) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MauSac]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MauSac](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ma] [varchar](20) NOT NULL,
+	[Ten] [nvarchar](50) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](100) NOT NULL,
+	[MaNV] [varchar](20) NOT NULL,
+	[TenDangNhap] [varchar](50) NOT NULL,
+	[MatKhau] [varchar](255) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+	[ChucVu] [bit] NOT NULL,
+	[NgaySinh] [date] NULL,
+	[GioiTinh] [bit] NOT NULL,
+	[SDT] [varchar](15) NOT NULL,
+	[DiaChi] [nvarchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SanPham]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SanPham](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ma] [varchar](20) NOT NULL,
+	[Ten] [nvarchar](100) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SPChiTiet]    Script Date: 3/13/2025 8:07:23 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SPChiTiet](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MaSPCT] [varchar](50) NOT NULL,
+	[IdMauSac] [int] NOT NULL,
+	[IdKichThuoc] [int] NOT NULL,
+	[IdSanPham] [int] NOT NULL,
+	[SoLuong] [int] NOT NULL,
+	[DonGia] [decimal](18, 2) NOT NULL,
+	[TrangThai] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[HoaDon] ON 
+
+INSERT [dbo].[HoaDon] ([ID], [IdKhachHang], [IdNhanVien], [NgayMuaHang], [TrangThai]) VALUES (1, 1, 1, CAST(N'2025-03-10T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[HoaDon] ([ID], [IdKhachHang], [IdNhanVien], [NgayMuaHang], [TrangThai]) VALUES (2, 2, 2, CAST(N'2025-03-11T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[HoaDon] ([ID], [IdKhachHang], [IdNhanVien], [NgayMuaHang], [TrangThai]) VALUES (3, 3, 3, CAST(N'2025-03-12T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[HoaDon] ([ID], [IdKhachHang], [IdNhanVien], [NgayMuaHang], [TrangThai]) VALUES (4, 4, 4, CAST(N'2025-03-13T00:00:00.000' AS DateTime), 1)
+INSERT [dbo].[HoaDon] ([ID], [IdKhachHang], [IdNhanVien], [NgayMuaHang], [TrangThai]) VALUES (5, 5, 5, CAST(N'2025-03-14T00:00:00.000' AS DateTime), 1)
+SET IDENTITY_INSERT [dbo].[HoaDon] OFF
+GO
+SET IDENTITY_INSERT [dbo].[HoaDonChiTiet] ON 
+
+INSERT [dbo].[HoaDonChiTiet] ([ID], [IdSPCT], [IdHoaDon], [SoLuong], [DonGia], [TrangThai]) VALUES (1, 1, 1, 2, CAST(200000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[HoaDonChiTiet] ([ID], [IdSPCT], [IdHoaDon], [SoLuong], [DonGia], [TrangThai]) VALUES (2, 2, 2, 1, CAST(150000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[HoaDonChiTiet] ([ID], [IdSPCT], [IdHoaDon], [SoLuong], [DonGia], [TrangThai]) VALUES (3, 3, 3, 3, CAST(300000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[HoaDonChiTiet] ([ID], [IdSPCT], [IdHoaDon], [SoLuong], [DonGia], [TrangThai]) VALUES (4, 4, 4, 2, CAST(350000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[HoaDonChiTiet] ([ID], [IdSPCT], [IdHoaDon], [SoLuong], [DonGia], [TrangThai]) VALUES (5, 5, 5, 1, CAST(400000.00 AS Decimal(18, 2)), 1)
+SET IDENTITY_INSERT [dbo].[HoaDonChiTiet] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KhachHang] ON 
+
+INSERT [dbo].[KhachHang] ([ID], [Ten], [SDT], [MaKH], [TrangThai], [DiaChi], [IDLoaiKH]) VALUES (1, N'Nguyễn Văn A', N'0912345678', N'KH001', 1, N'Hà Nội', 1)
+INSERT [dbo].[KhachHang] ([ID], [Ten], [SDT], [MaKH], [TrangThai], [DiaChi], [IDLoaiKH]) VALUES (2, N'Trần Thị B', N'0987654321', N'KH002', 1, N'Hồ Chí Minh', 2)
+INSERT [dbo].[KhachHang] ([ID], [Ten], [SDT], [MaKH], [TrangThai], [DiaChi], [IDLoaiKH]) VALUES (3, N'Lê Văn C', N'0977123456', N'KH003', 1, N'Đà Nẵng', 3)
+INSERT [dbo].[KhachHang] ([ID], [Ten], [SDT], [MaKH], [TrangThai], [DiaChi], [IDLoaiKH]) VALUES (4, N'Phạm Thị D', N'0966555444', N'KH004', 1, N'Hải Phòng', 4)
+INSERT [dbo].[KhachHang] ([ID], [Ten], [SDT], [MaKH], [TrangThai], [DiaChi], [IDLoaiKH]) VALUES (5, N'Hoàng Văn E', N'0954321987', N'KH005', 1, N'Nam Định', 5)
+SET IDENTITY_INSERT [dbo].[KhachHang] OFF
+GO
+SET IDENTITY_INSERT [dbo].[KichThuoc] ON 
+
+INSERT [dbo].[KichThuoc] ([ID], [Ma], [Ten], [TrangThai]) VALUES (1, N'S', N'Nhỏ', 1)
+INSERT [dbo].[KichThuoc] ([ID], [Ma], [Ten], [TrangThai]) VALUES (2, N'M', N'Vừa', 1)
+INSERT [dbo].[KichThuoc] ([ID], [Ma], [Ten], [TrangThai]) VALUES (3, N'L', N'Lớn', 1)
+INSERT [dbo].[KichThuoc] ([ID], [Ma], [Ten], [TrangThai]) VALUES (4, N'XL', N'Rất lớn', 1)
+INSERT [dbo].[KichThuoc] ([ID], [Ma], [Ten], [TrangThai]) VALUES (5, N'XXL', N'Siêu lớn', 1)
+SET IDENTITY_INSERT [dbo].[KichThuoc] OFF
+GO
+SET IDENTITY_INSERT [dbo].[LoaiKhachHang] ON 
+
+INSERT [dbo].[LoaiKhachHang] ([ID], [maLoaiKH], [tenLoaiKhachHang], [TrangThai]) VALUES (1, N'VIP', N'Khách hàng VIP', 1)
+INSERT [dbo].[LoaiKhachHang] ([ID], [maLoaiKH], [tenLoaiKhachHang], [TrangThai]) VALUES (2, N'TN', N'Khách hàng thân thiết', 1)
+INSERT [dbo].[LoaiKhachHang] ([ID], [maLoaiKH], [tenLoaiKhachHang], [TrangThai]) VALUES (3, N'TT', N'Khách hàng thường', 1)
+INSERT [dbo].[LoaiKhachHang] ([ID], [maLoaiKH], [tenLoaiKhachHang], [TrangThai]) VALUES (4, N'DN', N'Khách hàng doanh nghiệp', 1)
+INSERT [dbo].[LoaiKhachHang] ([ID], [maLoaiKH], [tenLoaiKhachHang], [TrangThai]) VALUES (5, N'NB', N'Khách hàng nội bộ', 1)
+SET IDENTITY_INSERT [dbo].[LoaiKhachHang] OFF
+GO
+SET IDENTITY_INSERT [dbo].[MauSac] ON 
+
+INSERT [dbo].[MauSac] ([ID], [Ma], [Ten], [TrangThai]) VALUES (1, N'MS01', N'Đen', 1)
+INSERT [dbo].[MauSac] ([ID], [Ma], [Ten], [TrangThai]) VALUES (2, N'MS02', N'Trắng', 1)
+INSERT [dbo].[MauSac] ([ID], [Ma], [Ten], [TrangThai]) VALUES (3, N'MS03', N'Xanh', 1)
+INSERT [dbo].[MauSac] ([ID], [Ma], [Ten], [TrangThai]) VALUES (4, N'MS04', N'Đỏ', 1)
+INSERT [dbo].[MauSac] ([ID], [Ma], [Ten], [TrangThai]) VALUES (5, N'MS05', N'Vàng', 1)
+SET IDENTITY_INSERT [dbo].[MauSac] OFF
+GO
+SET IDENTITY_INSERT [dbo].[NhanVien] ON 
+
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (1, N'Nguyễn Văn A', N'NV001', N'nva01', N'123456', 1, 1, CAST(N'1990-01-01' AS Date), 1, N'0901234567', N'Hà Nội')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (2, N'Trần Thị B', N'NV002', N'ttb02', N'123456', 1, 0, CAST(N'1992-02-02' AS Date), 0, N'0912345678', N'Hồ Chí Minh')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (3, N'Lê Văn C', N'NV003', N'lvc03', N'123456', 1, 0, CAST(N'1993-03-03' AS Date), 1, N'0923456789', N'Đà Nẵng')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (4, N'Phạm Thị D', N'NV004', N'ptd04', N'123456', 1, 0, CAST(N'1994-04-04' AS Date), 0, N'0934567890', N'Hải Phòng')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (5, N'Hoàng Văn E', N'NV005', N'hve05', N'123456', 1, 1, CAST(N'1995-05-05' AS Date), 1, N'0945678901', N'Nam Định')
+SET IDENTITY_INSERT [dbo].[NhanVien] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SanPham] ON 
+
+INSERT [dbo].[SanPham] ([ID], [Ma], [Ten], [TrangThai]) VALUES (1, N'A001', N'Áo sơ mi nam', 1)
+INSERT [dbo].[SanPham] ([ID], [Ma], [Ten], [TrangThai]) VALUES (2, N'A002', N'Áo thun nữ', 1)
+INSERT [dbo].[SanPham] ([ID], [Ma], [Ten], [TrangThai]) VALUES (3, N'Q001', N'Quần jean nam', 1)
+INSERT [dbo].[SanPham] ([ID], [Ma], [Ten], [TrangThai]) VALUES (4, N'Q002', N'Quần kaki nữ', 1)
+INSERT [dbo].[SanPham] ([ID], [Ma], [Ten], [TrangThai]) VALUES (5, N'A003', N'Áo khoác nam', 1)
+SET IDENTITY_INSERT [dbo].[SanPham] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SPChiTiet] ON 
+
+INSERT [dbo].[SPChiTiet] ([ID], [MaSPCT], [IdMauSac], [IdKichThuoc], [IdSanPham], [SoLuong], [DonGia], [TrangThai]) VALUES (1, N'A001-MS01-S', 1, 1, 1, 50, CAST(200000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[SPChiTiet] ([ID], [MaSPCT], [IdMauSac], [IdKichThuoc], [IdSanPham], [SoLuong], [DonGia], [TrangThai]) VALUES (2, N'A002-MS02-M', 2, 2, 2, 40, CAST(150000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[SPChiTiet] ([ID], [MaSPCT], [IdMauSac], [IdKichThuoc], [IdSanPham], [SoLuong], [DonGia], [TrangThai]) VALUES (3, N'Q001-MS03-L', 3, 3, 3, 30, CAST(300000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[SPChiTiet] ([ID], [MaSPCT], [IdMauSac], [IdKichThuoc], [IdSanPham], [SoLuong], [DonGia], [TrangThai]) VALUES (4, N'Q002-MS04-XL', 4, 4, 4, 20, CAST(350000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[SPChiTiet] ([ID], [MaSPCT], [IdMauSac], [IdKichThuoc], [IdSanPham], [SoLuong], [DonGia], [TrangThai]) VALUES (5, N'A003-MS05-XXL', 5, 5, 5, 10, CAST(400000.00 AS Decimal(18, 2)), 1)
+SET IDENTITY_INSERT [dbo].[SPChiTiet] OFF
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__KhachHan__2725CF1F225E43C6]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[KhachHang] ADD UNIQUE NONCLUSTERED 
+(
+	[MaKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__KhachHan__CA1930A588038299]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[KhachHang] ADD UNIQUE NONCLUSTERED 
+(
+	[SDT] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__KichThuo__3214CC9E7EA35F12]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[KichThuoc] ADD UNIQUE NONCLUSTERED 
+(
+	[Ma] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__MauSac__3214CC9EA150F79F]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[MauSac] ADD UNIQUE NONCLUSTERED 
+(
+	[Ma] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__NhanVien__2725D70BB01FAD52]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[NhanVien] ADD UNIQUE NONCLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__NhanVien__55F68FC006FC5F6A]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[NhanVien] ADD UNIQUE NONCLUSTERED 
+(
+	[TenDangNhap] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__NhanVien__CA1930A5F1E48A92]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[NhanVien] ADD UNIQUE NONCLUSTERED 
+(
+	[SDT] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__SanPham__3214CC9E3244D693]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[SanPham] ADD UNIQUE NONCLUSTERED 
+(
+	[Ma] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__SPChiTie__9ED6254696A9127E]    Script Date: 3/13/2025 8:07:23 PM ******/
+ALTER TABLE [dbo].[SPChiTiet] ADD UNIQUE NONCLUSTERED 
+(
+	[MaSPCT] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[HoaDon] ADD  DEFAULT (getdate()) FOR [NgayMuaHang]
+GO
+ALTER TABLE [dbo].[HoaDon] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[HoaDonChiTiet] ADD  DEFAULT ((1)) FOR [SoLuong]
+GO
+ALTER TABLE [dbo].[HoaDonChiTiet] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[KhachHang] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[KichThuoc] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[LoaiKhachHang] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[MauSac] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[NhanVien] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[SanPham] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[SPChiTiet] ADD  DEFAULT ((0)) FOR [SoLuong]
+GO
+ALTER TABLE [dbo].[SPChiTiet] ADD  DEFAULT ((1)) FOR [TrangThai]
+GO
+ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD FOREIGN KEY([IdKhachHang])
+REFERENCES [dbo].[KhachHang] ([ID])
+GO
+ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD FOREIGN KEY([IdNhanVien])
+REFERENCES [dbo].[NhanVien] ([ID])
+GO
+ALTER TABLE [dbo].[HoaDonChiTiet]  WITH CHECK ADD FOREIGN KEY([IdHoaDon])
+REFERENCES [dbo].[HoaDon] ([ID])
+GO
+ALTER TABLE [dbo].[HoaDonChiTiet]  WITH CHECK ADD FOREIGN KEY([IdSPCT])
+REFERENCES [dbo].[SPChiTiet] ([ID])
+GO
+ALTER TABLE [dbo].[KhachHang]  WITH CHECK ADD FOREIGN KEY([IDLoaiKH])
+REFERENCES [dbo].[LoaiKhachHang] ([ID])
+GO
+ALTER TABLE [dbo].[SPChiTiet]  WITH CHECK ADD FOREIGN KEY([IdKichThuoc])
+REFERENCES [dbo].[KichThuoc] ([ID])
+GO
+ALTER TABLE [dbo].[SPChiTiet]  WITH CHECK ADD FOREIGN KEY([IdMauSac])
+REFERENCES [dbo].[MauSac] ([ID])
+GO
+ALTER TABLE [dbo].[SPChiTiet]  WITH CHECK ADD FOREIGN KEY([IdSanPham])
+REFERENCES [dbo].[SanPham] ([ID])
+GO
