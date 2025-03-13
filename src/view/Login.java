@@ -4,13 +4,21 @@
  */
 package view;
 
+import java.util.Properties;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import service.NhanVienService;
+import service.impl.NhanVienServiceImpl;
+import util.ConfigUtil;
+import util.ValidationUtil;
 
 /**
  *
  * @author phamd
  */
 public class Login extends javax.swing.JFrame {
+    
+    private NhanVienService nhanVienService;
 
     /**
      * Creates new form Login
@@ -22,6 +30,10 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
+        
+        nhanVienService = new NhanVienServiceImpl();
+        
+        loadLuuMatKhau();
         
     }
 
@@ -44,7 +56,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txt_matKhau = new javax.swing.JPasswordField();
         lbl_tenDangNhap = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        chk_nhoMatKhau = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -59,13 +71,18 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(51, 0, 102));
         jLabel2.setText("ĐĂNG NHẬP");
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel3.setFont(new java.awt.Font("Roboto Slab SemiBold", 0, 14)); // NOI18N
         jLabel3.setText("Tên đăng nhập");
 
         txt_tenDangNhap.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_tenDangNhap.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txt_tenDangNhapCaretUpdate(evt);
+            }
+        });
 
         lbl_matKhau.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -73,6 +90,11 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setText("Mật khẩu");
 
         txt_matKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_matKhau.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                txt_matKhauCaretUpdate(evt);
+            }
+        });
 
         lbl_tenDangNhap.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -112,10 +134,15 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jCheckBox1.setText("Nhớ mật khẩu");
+        chk_nhoMatKhau.setText("Nhớ mật khẩu");
 
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Quên mật khẩu");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(51, 0, 102));
         jButton1.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 24)); // NOI18N
@@ -141,7 +168,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(89, 89, 89))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jCheckBox1)
+                        .addComponent(chk_nhoMatKhau)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(69, 69, 69))
@@ -165,7 +192,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
+                            .addComponent(chk_nhoMatKhau)
                             .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -194,9 +221,53 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new Home();
+        lbl_tenDangNhap.setText("");
+        lbl_matKhau.setText("");
+        
+        String tenDangNhap = txt_tenDangNhap.getText().trim();
+        String matKhau = new String(txt_matKhau.getPassword()).trim();
+        boolean nhoMatKhau = chk_nhoMatKhau.isSelected();
+        
+        if(ValidationUtil.isEmpty(tenDangNhap)) {
+            lbl_tenDangNhap.setText("Tên đăng nhập không được để trống!");
+        }
+        if (ValidationUtil.isEmpty(matKhau)) {
+            lbl_matKhau.setText("Mật khẩu không được để trống!");
+        }
+        if (ValidationUtil.isEmpty(tenDangNhap) || ValidationUtil.isEmpty(matKhau)) {
+            return;
+        }
+        
+        if (nhanVienService.dangNhap(tenDangNhap, matKhau)) {
+            JOptionPane.showMessageDialog(this, "Đăng nhập thành công!","Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            ConfigUtil.saveConfig(tenDangNhap, matKhau, nhoMatKhau);
+            
+            this.dispose();
+            new HomeView().setVisible(true);
+            return;
+        } else {
+            lbl_matKhau.setText("Sai thông tin đăng nhập!");
+        }
+        
+        setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txt_tenDangNhapCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_tenDangNhapCaretUpdate
+        // TODO add your handling code here:
+        lbl_tenDangNhap.setText("");
+    }//GEN-LAST:event_txt_tenDangNhapCaretUpdate
+
+    private void txt_matKhauCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_matKhauCaretUpdate
+        // TODO add your handling code here:
+        lbl_matKhau.setText("");
+    }//GEN-LAST:event_txt_matKhauCaretUpdate
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        new QuenMatKhau().setVisible(true);
+        return;
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -234,8 +305,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chk_nhoMatKhau;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -248,4 +319,15 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_matKhau;
     private javax.swing.JTextField txt_tenDangNhap;
     // End of variables declaration//GEN-END:variables
+
+    private void loadLuuMatKhau() {
+        Properties prop = ConfigUtil.loadConfig();
+        String luuTenDangNhap = prop.getProperty("tenDangNhap","");
+        String luuMatKhau = prop.getProperty("matKhau","");
+        boolean nhoMatKhau = Boolean.parseBoolean(prop.getProperty("nhoMatKhau","false"));
+        
+        txt_tenDangNhap.setText(luuTenDangNhap);
+        txt_matKhau.setText(luuMatKhau);
+        chk_nhoMatKhau.setSelected(nhoMatKhau);
+    }
 }

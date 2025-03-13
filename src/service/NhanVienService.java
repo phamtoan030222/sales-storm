@@ -4,10 +4,19 @@
  */
 package service;
 
+import dao.NhanVienDAO;
+import model.NhanVien;
+
 /**
  *
  * @author phamd
  */
-public class NhanVienService {
+public interface NhanVienService {
+    
+    boolean dangNhap(String tenDangNhap, String matKhau);
+    
+    boolean timNhanVienTheoEmail(String email);
+    
+    boolean resetPassword(String email, String newPassword);
     
 }
