@@ -122,6 +122,7 @@ CREATE TABLE [dbo].[NhanVien](
 	[GioiTinh] [bit] NOT NULL,
 	[SDT] [varchar](15) NOT NULL,
 	[DiaChi] [nvarchar](255) NULL,
+        [Email] [nvarchar] (255) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -220,11 +221,11 @@ SET IDENTITY_INSERT [dbo].[MauSac] OFF
 GO
 SET IDENTITY_INSERT [dbo].[NhanVien] ON 
 
-INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (1, N'Nguyễn Văn A', N'NV001', N'nva01', N'123456', 1, 1, CAST(N'1990-01-01' AS Date), 1, N'0901234567', N'Hà Nội')
-INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (2, N'Trần Thị B', N'NV002', N'ttb02', N'123456', 1, 0, CAST(N'1992-02-02' AS Date), 0, N'0912345678', N'Hồ Chí Minh')
-INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (3, N'Lê Văn C', N'NV003', N'lvc03', N'123456', 1, 0, CAST(N'1993-03-03' AS Date), 1, N'0923456789', N'Đà Nẵng')
-INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (4, N'Phạm Thị D', N'NV004', N'ptd04', N'123456', 1, 0, CAST(N'1994-04-04' AS Date), 0, N'0934567890', N'Hải Phòng')
-INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi]) VALUES (5, N'Hoàng Văn E', N'NV005', N'hve05', N'123456', 1, 1, CAST(N'1995-05-05' AS Date), 1, N'0945678901', N'Nam Định')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi], [Email]) VALUES (1, N'Nguyễn Văn A', N'NV001', N'nva01', N'123456', 1, 1, CAST(N'1990-01-01' AS Date), 1, N'0901234567', N'Hà Nội','')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi], [Email]) VALUES (2, N'Trần Thị B', N'NV002', N'ttb02', N'123456', 1, 0, CAST(N'1992-02-02' AS Date), 0, N'0912345678', N'Hồ Chí Minh','')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi], [Email]) VALUES (3, N'Lê Văn C', N'NV003', N'lvc03', N'123456', 1, 0, CAST(N'1993-03-03' AS Date), 1, N'0923456789', N'Đà Nẵng','')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi], [Email]) VALUES (4, N'Phạm Thị D', N'NV004', N'ptd04', N'123456', 1, 0, CAST(N'1994-04-04' AS Date), 0, N'0934567890', N'Hải Phòng','')
+INSERT [dbo].[NhanVien] ([ID], [Ten], [MaNV], [TenDangNhap], [MatKhau], [TrangThai], [ChucVu], [NgaySinh], [GioiTinh], [SDT], [DiaChi], [Email]) VALUES (5, N'Hoàng Văn E', N'NV005', N'hve05', N'123456', 1, 1, CAST(N'1995-05-05' AS Date), 1, N'0945678901', N'Nam Định','')
 SET IDENTITY_INSERT [dbo].[NhanVien] OFF
 GO
 SET IDENTITY_INSERT [dbo].[SanPham] ON 
