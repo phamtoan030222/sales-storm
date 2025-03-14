@@ -4,7 +4,13 @@
  */
 package view;
 
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,8 +21,42 @@ public class HomeView extends javax.swing.JFrame {
     /**
      * Creates new form HomeView
      */
+    private JLabel selectedLabel = null; // Lưu label đang chọn
+    private final Color defaultTextColor = new Color(248, 248, 248);  // Trắng nhạt
+private final Color hoverTextColor = new Color(255, 152, 0);  // Cam nổi bật khi hover
+private final Color selectedTextColor = new Color(255, 255, 255);  // Trắng sáng khi chọn
+private final Color defaultBackground = new Color(30, 30, 30); // Đen xám sang trọng
+private final Color hoverBackground = new Color(51, 51, 51); // Xám trung tính khi hover
+private final Color selectedBackground = new Color(255, 61, 0); // Đỏ cam rực rỡ khi chọn
+
     public HomeView() {
         initComponents();
+        this.setTitle("Hệ thống quản lý bán hàng");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        mainPanel.setLayout(new CardLayout());// Đặt CardLayout cho mainPanel
+
+        // Thêm các JPanel vào CardLayout với ID duy nhất
+        mainPanel.add(panelThongKe, "panelThongKe");
+        mainPanel.add(panelNhanVien, "panelNhanVien");
+        mainPanel.add(panelHoaDon, "panelHoaDon");
+        mainPanel.add(panelKhachHang, "panelKhachHang");
+        mainPanel.add(panelLichSu, "panelLichSu");
+        mainPanel.add(panelKhuyenMai, "panelKhuyenMai");
+        mainPanel.add(panelDoiMK, "panelDoiMK");
+        mainPanel.add(panelDangXuat, "panelDangXuat");
+        mainPanel.add(panelSanPham, "panelSanPham");
+
+        addLabelClickListener(lbl_thongKe, "panelThongKe");
+        addLabelClickListener(lbl_nhanVien, "panelNhanVien");
+        addLabelClickListener(lbl_hoaDon, "panelHoaDon");
+        addLabelClickListener(lbl_khachHang, "panelKhachHang");
+        addLabelClickListener(lbl_lichSu, "panelLichSu");
+        addLabelClickListener(lbl_khuyenMai, "panelKhuyenMai");
+        addLabelClickListener(lbl_doiMK, "panelDoiMK");
+        addLabelClickListener(lbl_dangXuat, "panelDangXuat");
+        addLabelClickListener(lbl_sanPham, "panelSanPham");
     }
 
     /**
@@ -30,16 +70,26 @@ public class HomeView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        lbl_sanPham = new javax.swing.JPanel();
+        lbl_menu = new javax.swing.JPanel();
         lbl_thongKe = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbl_sanPham = new javax.swing.JLabel();
         lbl_nhanVien = new javax.swing.JLabel();
         lbl_hoaDon = new javax.swing.JLabel();
         lbl_khachHang = new javax.swing.JLabel();
         lbl_lichSu = new javax.swing.JLabel();
-        lbl_doiMatKhau = new javax.swing.JLabel();
+        lbl_khuyenMai = new javax.swing.JLabel();
+        lbl_doiMK = new javax.swing.JLabel();
         lbl_dangXuat = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        panelThongKe = new javax.swing.JPanel();
+        panelNhanVien = new javax.swing.JPanel();
+        panelKhuyenMai = new javax.swing.JPanel();
+        panelHoaDon = new javax.swing.JPanel();
+        panelKhachHang = new javax.swing.JPanel();
+        panelLichSu = new javax.swing.JPanel();
+        panelDoiMK = new javax.swing.JPanel();
+        panelDangXuat = new javax.swing.JPanel();
+        panelSanPham = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,9 +98,7 @@ public class HomeView extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/rsz_logo-fotor-bg-remover-2025031441556.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jPanel2.setLayout(new java.awt.CardLayout());
-
-        lbl_sanPham.setPreferredSize(new java.awt.Dimension(75, 548));
+        lbl_menu.setPreferredSize(new java.awt.Dimension(75, 548));
 
         lbl_thongKe.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_thongKe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -59,8 +107,10 @@ public class HomeView extends javax.swing.JFrame {
         lbl_thongKe.setAlignmentX(0.5F);
         lbl_thongKe.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         lbl_thongKe.setDisplayedMnemonicIndex(0);
-        lbl_thongKe.setOpaque(true);
         lbl_thongKe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_thongKeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbl_thongKeMouseEntered(evt);
             }
@@ -69,12 +119,17 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/thongke.png"))); // NOI18N
-        jLabel3.setText("SẢN PHẨM");
-        jLabel3.setAlignmentX(0.5F);
-        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_sanPham.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
+        lbl_sanPham.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_sanPham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/thongke.png"))); // NOI18N
+        lbl_sanPham.setText("SẢN PHẨM");
+        lbl_sanPham.setAlignmentX(0.5F);
+        lbl_sanPham.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_sanPham.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_sanPhamMouseClicked(evt);
+            }
+        });
 
         lbl_nhanVien.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_nhanVien.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -82,6 +137,11 @@ public class HomeView extends javax.swing.JFrame {
         lbl_nhanVien.setText("NHÂN VIÊN");
         lbl_nhanVien.setAlignmentX(0.5F);
         lbl_nhanVien.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_nhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_nhanVienMouseClicked(evt);
+            }
+        });
 
         lbl_hoaDon.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_hoaDon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,6 +149,11 @@ public class HomeView extends javax.swing.JFrame {
         lbl_hoaDon.setText("HÓA ĐƠN");
         lbl_hoaDon.setAlignmentX(0.5F);
         lbl_hoaDon.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_hoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_hoaDonMouseClicked(evt);
+            }
+        });
 
         lbl_khachHang.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_khachHang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -96,6 +161,11 @@ public class HomeView extends javax.swing.JFrame {
         lbl_khachHang.setText(" KHÁCH HÀNG");
         lbl_khachHang.setAlignmentX(0.5F);
         lbl_khachHang.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_khachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_khachHangMouseClicked(evt);
+            }
+        });
 
         lbl_lichSu.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_lichSu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -103,13 +173,36 @@ public class HomeView extends javax.swing.JFrame {
         lbl_lichSu.setText("LỊCH SỬ");
         lbl_lichSu.setAlignmentX(0.5F);
         lbl_lichSu.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_lichSu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_lichSuMouseClicked(evt);
+            }
+        });
 
-        lbl_doiMatKhau.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
-        lbl_doiMatKhau.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_doiMatKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/thongke.png"))); // NOI18N
-        lbl_doiMatKhau.setText("ĐỔI MK");
-        lbl_doiMatKhau.setAlignmentX(0.5F);
-        lbl_doiMatKhau.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_khuyenMai.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
+        lbl_khuyenMai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_khuyenMai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/thongke.png"))); // NOI18N
+        lbl_khuyenMai.setText("KHUYẾN MẠI");
+        lbl_khuyenMai.setAlignmentX(0.5F);
+        lbl_khuyenMai.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_khuyenMai.setName(""); // NOI18N
+        lbl_khuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_khuyenMaiMouseClicked(evt);
+            }
+        });
+
+        lbl_doiMK.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
+        lbl_doiMK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_doiMK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/thongke.png"))); // NOI18N
+        lbl_doiMK.setText("ĐỔI MẬT KHẨU");
+        lbl_doiMK.setAlignmentX(0.5F);
+        lbl_doiMK.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_doiMK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_doiMKMouseClicked(evt);
+            }
+        });
 
         lbl_dangXuat.setFont(new java.awt.Font("Roboto Slab SemiBold", 1, 14)); // NOI18N
         lbl_dangXuat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -117,26 +210,32 @@ public class HomeView extends javax.swing.JFrame {
         lbl_dangXuat.setText("ĐĂNG XUẤT");
         lbl_dangXuat.setAlignmentX(0.5F);
         lbl_dangXuat.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        lbl_dangXuat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_dangXuatMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout lbl_sanPhamLayout = new javax.swing.GroupLayout(lbl_sanPham);
-        lbl_sanPham.setLayout(lbl_sanPhamLayout);
-        lbl_sanPhamLayout.setHorizontalGroup(
-            lbl_sanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout lbl_menuLayout = new javax.swing.GroupLayout(lbl_menu);
+        lbl_menu.setLayout(lbl_menuLayout);
+        lbl_menuLayout.setHorizontalGroup(
+            lbl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lbl_thongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_sanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_nhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_hoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_khachHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_lichSu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbl_doiMatKhau, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_khuyenMai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_doiMK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_dangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        lbl_sanPhamLayout.setVerticalGroup(
-            lbl_sanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lbl_sanPhamLayout.createSequentialGroup()
+        lbl_menuLayout.setVerticalGroup(
+            lbl_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_menuLayout.createSequentialGroup()
                 .addComponent(lbl_thongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_sanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_nhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -146,11 +245,61 @@ public class HomeView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_lichSu, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_doiMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_khuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_doiMK, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_dangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 154, Short.MAX_VALUE))
+                .addGap(0, 104, Short.MAX_VALUE))
         );
+
+        mainPanel.setBackground(new java.awt.Color(153, 153, 255));
+        mainPanel.setName("mainPanel"); // NOI18N
+        mainPanel.setLayout(new java.awt.CardLayout());
+
+        panelThongKe.setBackground(new java.awt.Color(255, 153, 255));
+        panelThongKe.setName("panelThongKe"); // NOI18N
+        panelThongKe.setPreferredSize(new java.awt.Dimension(1048, 548));
+        panelThongKe.setLayout(null);
+        mainPanel.add(panelThongKe, "panelThongKe");
+
+        panelNhanVien.setBackground(new java.awt.Color(153, 153, 255));
+        panelNhanVien.setName("panelNhanVien"); // NOI18N
+        panelNhanVien.setLayout(null);
+        mainPanel.add(panelNhanVien, "panelNhanVien");
+
+        panelKhuyenMai.setName("panelKhuyenMai"); // NOI18N
+        panelKhuyenMai.setLayout(null);
+        mainPanel.add(panelKhuyenMai, "panelKhuyenMai");
+
+        panelHoaDon.setName("panelHoaDon"); // NOI18N
+        panelHoaDon.setLayout(null);
+        mainPanel.add(panelHoaDon, "panelHoaDon");
+
+        panelKhachHang.setBackground(new java.awt.Color(204, 255, 204));
+        panelKhachHang.setName("panelKhachHang"); // NOI18N
+        panelKhachHang.setLayout(null);
+        mainPanel.add(panelKhachHang, "panelKhachHang");
+
+        panelLichSu.setBackground(new java.awt.Color(0, 153, 153));
+        panelLichSu.setName("panelLichSu"); // NOI18N
+        panelLichSu.setLayout(null);
+        mainPanel.add(panelLichSu, "panelLichSu");
+
+        panelDoiMK.setBackground(new java.awt.Color(153, 0, 153));
+        panelDoiMK.setName("panelDoiMK"); // NOI18N
+        panelDoiMK.setLayout(null);
+        mainPanel.add(panelDoiMK, "panelDoiMK");
+
+        panelDangXuat.setBackground(new java.awt.Color(255, 153, 102));
+        panelDangXuat.setName("panelDangXuat"); // NOI18N
+        panelDangXuat.setLayout(null);
+        mainPanel.add(panelDangXuat, "panelDangXuat");
+
+        panelSanPham.setBackground(new java.awt.Color(102, 255, 255));
+        panelSanPham.setName("panelSanPham"); // NOI18N
+        panelSanPham.setLayout(null);
+        mainPanel.add(panelSanPham, "panelSanPham");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,20 +308,20 @@ public class HomeView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_sanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                    .addComponent(lbl_menu, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1049, Short.MAX_VALUE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbl_sanPham, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -181,7 +330,7 @@ public class HomeView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,15 +342,65 @@ public class HomeView extends javax.swing.JFrame {
 
     private void lbl_thongKeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_thongKeMouseEntered
         // TODO add your handling code here:
-        lbl_thongKe.setBackground(Color.BLUE);
-        lbl_thongKe.setForeground(Color.WHITE);
     }//GEN-LAST:event_lbl_thongKeMouseEntered
 
     private void lbl_thongKeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_thongKeMouseExited
         // TODO add your handling code here:
-        lbl_thongKe.setBackground(new Color(242,242,242));
-        lbl_thongKe.setForeground(Color.BLACK);
     }//GEN-LAST:event_lbl_thongKeMouseExited
+
+    private void lbl_thongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_thongKeMouseClicked
+        // TODO add your handling code here:   
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelThongKe");
+    }//GEN-LAST:event_lbl_thongKeMouseClicked
+
+    private void lbl_sanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_sanPhamMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelSanPham");
+    }//GEN-LAST:event_lbl_sanPhamMouseClicked
+
+    private void lbl_nhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_nhanVienMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelNhanVien");
+    }//GEN-LAST:event_lbl_nhanVienMouseClicked
+
+    private void lbl_hoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_hoaDonMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelHoaDon");
+    }//GEN-LAST:event_lbl_hoaDonMouseClicked
+
+    private void lbl_khachHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_khachHangMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelKhachHang");
+    }//GEN-LAST:event_lbl_khachHangMouseClicked
+
+    private void lbl_lichSuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_lichSuMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelLichSu");
+    }//GEN-LAST:event_lbl_lichSuMouseClicked
+
+    private void lbl_khuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_khuyenMaiMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelKhuyenMai");
+    }//GEN-LAST:event_lbl_khuyenMaiMouseClicked
+
+    private void lbl_doiMKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_doiMKMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelDoiMK");
+    }//GEN-LAST:event_lbl_doiMKMouseClicked
+
+    private void lbl_dangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_dangXuatMouseClicked
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) mainPanel.getLayout();
+        card.show(mainPanel, "panelDangXuat");
+    }//GEN-LAST:event_lbl_dangXuatMouseClicked
 
     /**
      * @param args the command line arguments
@@ -238,18 +437,69 @@ public class HomeView extends javax.swing.JFrame {
         });
     }
 
+    private void addLabelClickListener(JLabel label, String panelName) {
+    label.setOpaque(true); // Đảm bảo JLabel hiển thị màu nền
+
+    label.addMouseListener(new MouseAdapter() {
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            if (label != selectedLabel) {
+                label.setForeground(hoverTextColor);
+                label.setBackground(hoverBackground);
+            }
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            if (label != selectedLabel) {
+                label.setForeground(Color.BLACK);
+                label.setBackground(new Color(242,242,242));
+            }
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (selectedLabel != null) {
+                // Reset label trước đó về màu mặc định
+                selectedLabel.setForeground(Color.BLACK);
+                selectedLabel.setBackground(new Color(242,242,242));
+            }
+
+            // Cập nhật label được chọn
+            selectedLabel = label;
+            label.setForeground(selectedTextColor);
+            label.setBackground(selectedBackground);
+
+            // Hiển thị panel tương ứng
+            CardLayout card = (CardLayout) mainPanel.getLayout();
+            card.show(mainPanel, panelName);
+        }
+    });
+}
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbl_dangXuat;
-    private javax.swing.JLabel lbl_doiMatKhau;
+    private javax.swing.JLabel lbl_doiMK;
     private javax.swing.JLabel lbl_hoaDon;
     private javax.swing.JLabel lbl_khachHang;
+    private javax.swing.JLabel lbl_khuyenMai;
     private javax.swing.JLabel lbl_lichSu;
+    private javax.swing.JPanel lbl_menu;
     private javax.swing.JLabel lbl_nhanVien;
-    private javax.swing.JPanel lbl_sanPham;
+    private javax.swing.JLabel lbl_sanPham;
     private javax.swing.JLabel lbl_thongKe;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel panelDangXuat;
+    private javax.swing.JPanel panelDoiMK;
+    private javax.swing.JPanel panelHoaDon;
+    private javax.swing.JPanel panelKhachHang;
+    private javax.swing.JPanel panelKhuyenMai;
+    private javax.swing.JPanel panelLichSu;
+    private javax.swing.JPanel panelNhanVien;
+    private javax.swing.JPanel panelSanPham;
+    private javax.swing.JPanel panelThongKe;
     // End of variables declaration//GEN-END:variables
 }
