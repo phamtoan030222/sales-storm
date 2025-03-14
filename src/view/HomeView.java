@@ -23,11 +23,11 @@ public class HomeView extends javax.swing.JFrame {
      */
     private JLabel selectedLabel = null; // Lưu label đang chọn
     private final Color defaultTextColor = new Color(248, 248, 248);  // Trắng nhạt
-private final Color hoverTextColor = new Color(255, 152, 0);  // Cam nổi bật khi hover
-private final Color selectedTextColor = new Color(255, 255, 255);  // Trắng sáng khi chọn
-private final Color defaultBackground = new Color(30, 30, 30); // Đen xám sang trọng
-private final Color hoverBackground = new Color(51, 51, 51); // Xám trung tính khi hover
-private final Color selectedBackground = new Color(255, 61, 0); // Đỏ cam rực rỡ khi chọn
+    private final Color hoverTextColor = new Color(255, 152, 0);  // Cam nổi bật khi hover
+    private final Color selectedTextColor = new Color(255, 255, 255);  // Trắng sáng khi chọn
+    private final Color defaultBackground = new Color(30, 30, 30); // Đen xám sang trọng
+    private final Color hoverBackground = new Color(51, 51, 51); // Xám trung tính khi hover
+    private final Color selectedBackground = new Color(255, 61, 0); // Đỏ cam rực rỡ khi chọn
 
     public HomeView() {
         initComponents();
@@ -311,7 +311,7 @@ private final Color selectedBackground = new Color(255, 61, 0); // Đỏ cam r�
                     .addComponent(lbl_menu, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
