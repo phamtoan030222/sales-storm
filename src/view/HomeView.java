@@ -138,7 +138,7 @@ public class HomeView extends javax.swing.JFrame {
         }
     }
     
-    private void xuLyChonRadioButton() {
+    void xuLyChonRadioButton() {
         if (rdo_mausac.isSelected()) {
             capNhatBangThuocTinh("Mau_Sac", "Màu sắc");
         } else if (rdo_loaisp.isSelected()) {
@@ -277,6 +277,10 @@ public class HomeView extends javax.swing.JFrame {
         btn_suaspct = new javax.swing.JButton();
         btn_xoaspct = new javax.swing.JButton();
         btn_resetthongtinchitietsp = new javax.swing.JButton();
+        btn_themnhanhmausac = new javax.swing.JButton();
+        btn_themnhanhchatlieu = new javax.swing.JButton();
+        btn_themnhanhkichthuoc = new javax.swing.JButton();
+        btn_themnhanhloaisp = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lbl_ttspct = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -607,10 +611,38 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
 
-        btn_resetthongtinchitietsp.setText("Reset");
+        btn_resetthongtinchitietsp.setText("Làm mới");
         btn_resetthongtinchitietsp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_resetthongtinchitietspActionPerformed(evt);
+            }
+        });
+
+        btn_themnhanhmausac.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
+        btn_themnhanhmausac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themnhanhmausacActionPerformed(evt);
+            }
+        });
+
+        btn_themnhanhchatlieu.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
+        btn_themnhanhchatlieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themnhanhchatlieuActionPerformed(evt);
+            }
+        });
+
+        btn_themnhanhkichthuoc.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
+        btn_themnhanhkichthuoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themnhanhkichthuocActionPerformed(evt);
+            }
+        });
+
+        btn_themnhanhloaisp.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
+        btn_themnhanhloaisp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_themnhanhloaispActionPerformed(evt);
             }
         });
 
@@ -651,8 +683,13 @@ public class HomeView extends javax.swing.JFrame {
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txt_maspct, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
                                     .addComponent(lbl_tbmasp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(143, 143, 143)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btn_themnhanhloaisp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(lbl_tbsoluong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
@@ -660,15 +697,18 @@ public class HomeView extends javax.swing.JFrame {
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel10))
                                 .addGap(44, 44, 44)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cbx_chatlieu, javax.swing.GroupLayout.Alignment.LEADING, 0, 247, Short.MAX_VALUE)
+                                    .addComponent(cbx_kichthuoc, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbx_mausac, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txt_soluongsp))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbx_mausac, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbx_kichthuoc, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbx_chatlieu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txt_soluongsp)))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addComponent(lbl_tbsoluong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(48, 48, 48)
+                                    .addComponent(btn_themnhanhmausac, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_themnhanhchatlieu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_themnhanhkichthuoc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_themspct)
                     .addComponent(btn_suaspct)
@@ -689,17 +729,20 @@ public class HomeView extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
                         .addComponent(cbx_mausac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_themspct)))
+                        .addComponent(btn_themspct)
+                        .addComponent(btn_themnhanhmausac)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(cbx_kichthuoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbx_kichthuoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_themnhanhkichthuoc))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cbx_chatlieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)))
+                            .addComponent(jLabel13)
+                            .addComponent(btn_themnhanhchatlieu)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_tbmasp, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -727,16 +770,18 @@ public class HomeView extends javax.swing.JFrame {
                             .addComponent(btn_resetthongtinchitietsp)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_loaisanpham, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_themnhanhloaisp)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbx_loaisanpham, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_dongiasp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_tbdongiasp, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -769,6 +814,20 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(tbl_spchitiet);
+        if (tbl_spchitiet.getColumnModel().getColumnCount() > 0) {
+            tbl_spchitiet.getColumnModel().getColumn(0).setMinWidth(40);
+            tbl_spchitiet.getColumnModel().getColumn(0).setPreferredWidth(40);
+            tbl_spchitiet.getColumnModel().getColumn(0).setMaxWidth(40);
+            tbl_spchitiet.getColumnModel().getColumn(1).setMinWidth(80);
+            tbl_spchitiet.getColumnModel().getColumn(1).setPreferredWidth(80);
+            tbl_spchitiet.getColumnModel().getColumn(1).setMaxWidth(80);
+            tbl_spchitiet.getColumnModel().getColumn(4).setMinWidth(70);
+            tbl_spchitiet.getColumnModel().getColumn(4).setPreferredWidth(70);
+            tbl_spchitiet.getColumnModel().getColumn(4).setMaxWidth(70);
+            tbl_spchitiet.getColumnModel().getColumn(8).setMinWidth(60);
+            tbl_spchitiet.getColumnModel().getColumn(8).setPreferredWidth(60);
+            tbl_spchitiet.getColumnModel().getColumn(8).setMaxWidth(60);
+        }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -837,7 +896,7 @@ public class HomeView extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btn_spctdaxoa))
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1008,6 +1067,11 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbl_thuoctinh);
+        if (tbl_thuoctinh.getColumnModel().getColumnCount() > 0) {
+            tbl_thuoctinh.getColumnModel().getColumn(0).setMinWidth(40);
+            tbl_thuoctinh.getColumnModel().getColumn(0).setPreferredWidth(40);
+            tbl_thuoctinh.getColumnModel().getColumn(0).setMaxWidth(40);
+        }
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1365,10 +1429,6 @@ public class HomeView extends javax.swing.JFrame {
         lbl_dsthuoctinh.setText("DANH SÁCH THUỘC TÍNH ĐÃ XÓA");
     }//GEN-LAST:event_btn_dsdaxoaActionPerformed
 
-    private void cbx_loaisanphamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_loaisanphamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbx_loaisanphamActionPerformed
-
     private void tbl_spchitietMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_spchitietMouseClicked
         int selectedRow = tbl_spchitiet.getSelectedRow(); // Lấy chỉ số hàng được chọn
         if (selectedRow != -1) { // Kiểm tra xem có hàng nào được chọn không
@@ -1433,7 +1493,183 @@ public class HomeView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_khoiphucthuoctinhActionPerformed
 
+    private void txt_tenthuoctinhCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_tenthuoctinhCaretUpdate
+        lbl_thongbaothuoctinh.setText("");
+    }//GEN-LAST:event_txt_tenthuoctinhCaretUpdate
+
+    private void btn_spctdaxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_spctdaxoaActionPerformed
+        btn_khoiphucspct.setVisible(true);
+        fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTietDaXoa());
+        lbl_ttspct.setText("THÔNG TIN SẢN PHẨM ĐÃ XÓA");
+        btn_trovespct.setVisible(true);
+    }//GEN-LAST:event_btn_spctdaxoaActionPerformed
+
+    private void btn_khoiphucspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_khoiphucspctActionPerformed
+        int chon = tbl_spchitiet.getSelectedRow();
+
+        if (chon == -1) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn một sản phẩm để khôi phục!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String ma = txt_maspct.getText().trim();
+
+        // Lấy giá trị từ JComboBox
+        String tenLoaiSP = cbx_loaisanpham.getSelectedItem().toString();
+        String tenKichThuoc = cbx_kichthuoc.getSelectedItem().toString();
+        String tenMauSac = cbx_mausac.getSelectedItem().toString();
+        String tenChatLieu = cbx_chatlieu.getSelectedItem().toString();
+
+        // Lấy ID từ HashMap (cần tạo HashMap ở bước trước)
+        int idLoaiSP = sanPhamMap.get(tenLoaiSP);
+        int idKichThuoc = kichThuocMap.get(tenKichThuoc);
+        int idMauSac = mauSacMap.get(tenMauSac);
+        int idChatLieu = chatLieuMap.get(tenChatLieu);
+
+        // Hỏi xác nhận trước khi xóa
+        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn khôi phục ?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (luachon == JOptionPane.YES_OPTION) {
+            boolean khoiPhucThanhCong = service_spchitiet.khoiPhucDaXoaSPCT(ma, idLoaiSP, idMauSac, idChatLieu, idKichThuoc);
+
+            if (khoiPhucThanhCong) {
+                JOptionPane.showMessageDialog(this, "Khôi phục sản phẩm thành công!");
+
+                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTietDaXoa());
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Khôi phục thất bại. Vui lòng thử lại!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btn_khoiphucspctActionPerformed
+
+    private void btn_backthuoctinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backthuoctinhActionPerformed
+        btn_khoiphucthuoctinh.setVisible(false);
+        btn_backthuoctinh.setVisible(false);
+        xuLyChonRadioButton();  // Cập nhật lại bảng sau khi xóa
+        fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
+        lbl_dsthuoctinh.setText("DANH SÁCH THUỘC TÍNH");
+    }//GEN-LAST:event_btn_backthuoctinhActionPerformed
+
+    private void btn_trovespctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trovespctActionPerformed
+        lbl_ttspct.setText("THÔNG TIN SẢN PHẨM ĐANG BÁN");
+         fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
+         btn_trovespct.setVisible(false);
+         btn_khoiphucspct.setVisible(false);
+    }//GEN-LAST:event_btn_trovespctActionPerformed
+
+    private void txt_timkiemsanphamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_timkiemsanphamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_timkiemsanphamActionPerformed
+
+    private void btn_resetthongtinchitietspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetthongtinchitietspActionPerformed
+        txt_maspct.setText("");
+        txt_tenspct.setText("");
+        txt_dongiasp.setText("");
+        txt_soluongsp.setText("");
+        lbl_tbmasp.setText("");
+        lbl_tbtensp.setText("");
+        lbl_tbdongiasp.setText("");
+        lbl_tbsoluong.setText("");
+        cbx_chatlieu.setSelectedIndex(0);
+        cbx_kichthuoc.setSelectedIndex(0);
+        cbx_loaisanpham.setSelectedIndex(0);
+        cbx_mausac.setSelectedIndex(0);
+        txt_maspct.setEditable(true);
+    }//GEN-LAST:event_btn_resetthongtinchitietspActionPerformed
+
+    private void btn_xoaspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaspctActionPerformed
+        int selectedRow = tbl_spchitiet.getSelectedRow();
+        String ma = txt_maspct.getText().trim();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm cần xóa!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa sản phẩm không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (luachon == JOptionPane.YES_OPTION) {
+            // Gửi ID vào service thay vì tên
+            boolean xoa = service_spchitiet.xoaSPCT(ma);
+            if (xoa) {
+                JOptionPane.showMessageDialog(this, "Xóa sản phẩm thành công.");
+                // Cập nhật lại bảng sau khi thêm
+                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
+            } else {
+                JOptionPane.showMessageDialog(this, "Xóa thất bại.");
+            }
+        }
+    }//GEN-LAST:event_btn_xoaspctActionPerformed
+
+    private void btn_suaspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaspctActionPerformed
+        int selectedRow = tbl_spchitiet.getSelectedRow();
+
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm muốn sửa!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String ma = txt_maspct.getText().trim();
+        String ten = txt_tenspct.getText().trim();
+
+        // Lấy giá trị từ JComboBox
+        String tenLoaiSP = cbx_loaisanpham.getSelectedItem().toString();
+        String tenKichThuoc = cbx_kichthuoc.getSelectedItem().toString();
+        String tenMauSac = cbx_mausac.getSelectedItem().toString();
+        String tenChatLieu = cbx_chatlieu.getSelectedItem().toString();
+
+        // Lấy ID từ HashMap (cần tạo HashMap ở bước trước)
+        int idLoaiSP = sanPhamMap.get(tenLoaiSP);
+        int idKichThuoc = kichThuocMap.get(tenKichThuoc);
+        int idMauSac = mauSacMap.get(tenMauSac);
+        int idChatLieu = chatLieuMap.get(tenChatLieu);
+
+        String donGia = txt_dongiasp.getText().trim();
+
+        if (ValidationUtil.isEmpty(ten)) {
+            lbl_tbtensp.setText("Tên sản phẩm không được để trống");
+            return;
+        }
+
+        if (ValidationUtil.isEmpty(txt_dongiasp.getText().trim())) {
+            lbl_tbdongiasp.setText("Đơn giá sản phẩm không được để trống");
+            return;
+        } else if (!ValidationUtil.isNumberic(txt_dongiasp.getText().trim())) {
+            lbl_tbdongiasp.setText("Đơn giá sản phẩm phải là số ");
+            return;
+        } else if (Integer.parseInt(txt_dongiasp.getText().trim()) <= 0) {
+            lbl_tbdongiasp.setText("Đơn giá sản phẩm phải lớn hơn 0");
+            return;
+        }
+
+        int soLuong;
+        if (ValidationUtil.isEmpty(txt_soluongsp.getText().trim())) {
+            lbl_tbsoluong.setText("Số lượng sản phẩm không được để trống");
+            return;
+        } else if (!ValidationUtil.isNumberic(txt_soluongsp.getText().trim())) {
+            lbl_tbsoluong.setText("Số lượng sản phẩm phải là số Nguyên");
+            return;
+        } else if (Integer.parseInt(txt_soluongsp.getText().trim()) <= 0) {
+            lbl_tbsoluong.setText("Số lượng sản phẩm phải lớn hơn 0");
+            return;
+        } else {
+            soLuong = Integer.parseInt(txt_soluongsp.getText().trim());
+        }
+
+        // Xác nhận sửa
+        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có muốn sửa sản phẩm không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if (luachon == JOptionPane.YES_OPTION) {
+            // Gửi ID vào service thay vì tên
+            boolean sua = service_spchitiet.updateSanPham(ma, ten, idLoaiSP, idKichThuoc, idMauSac, idChatLieu, donGia, soLuong);
+            if (sua) {
+                JOptionPane.showMessageDialog(this, "Sửa sản phẩm thành công.");
+                // Cập nhật lại bảng sau khi thêm
+                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thất bại.");
+            }
+        }
+    }//GEN-LAST:event_btn_suaspctActionPerformed
+
     private void btn_themspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themspctActionPerformed
+         txt_maspct.setEditable(true);
         String ma = txt_maspct.getText().trim();
         String ten = txt_tenspct.getText().trim();
 
@@ -1507,197 +1743,125 @@ public class HomeView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_themspctActionPerformed
 
-    private void txt_tenthuoctinhCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_tenthuoctinhCaretUpdate
-        lbl_thongbaothuoctinh.setText("");
-    }//GEN-LAST:event_txt_tenthuoctinhCaretUpdate
-
-    private void txt_maspctCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_maspctCaretUpdate
-        lbl_tbmasp.setText("");
-    }//GEN-LAST:event_txt_maspctCaretUpdate
-
-    private void txt_tenspctCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_tenspctCaretUpdate
-        lbl_tbtensp.setText("");
-    }//GEN-LAST:event_txt_tenspctCaretUpdate
-
-    private void txt_dongiaspCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_dongiaspCaretUpdate
-        lbl_tbdongiasp.setText("");
-    }//GEN-LAST:event_txt_dongiaspCaretUpdate
+    private void cbx_loaisanphamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_loaisanphamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbx_loaisanphamActionPerformed
 
     private void txt_soluongspCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_soluongspCaretUpdate
         lbl_tbsoluong.setText("");
     }//GEN-LAST:event_txt_soluongspCaretUpdate
 
-    private void btn_suaspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_suaspctActionPerformed
-        int selectedRow = tbl_spchitiet.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm muốn sửa!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        String ma = txt_maspct.getText().trim();
-        String ten = txt_tenspct.getText().trim();
-
-        // Lấy giá trị từ JComboBox
-        String tenLoaiSP = cbx_loaisanpham.getSelectedItem().toString();
-        String tenKichThuoc = cbx_kichthuoc.getSelectedItem().toString();
-        String tenMauSac = cbx_mausac.getSelectedItem().toString();
-        String tenChatLieu = cbx_chatlieu.getSelectedItem().toString();
-
-        // Lấy ID từ HashMap (cần tạo HashMap ở bước trước)
-        int idLoaiSP = sanPhamMap.get(tenLoaiSP);
-        int idKichThuoc = kichThuocMap.get(tenKichThuoc);
-        int idMauSac = mauSacMap.get(tenMauSac);
-        int idChatLieu = chatLieuMap.get(tenChatLieu);
-
-        String donGia = txt_dongiasp.getText().trim();
-
-        if (ValidationUtil.isEmpty(ten)) {
-            lbl_tbtensp.setText("Tên sản phẩm không được để trống");
-            return;
-        }
-
-        if (ValidationUtil.isEmpty(txt_dongiasp.getText().trim())) {
-            lbl_tbdongiasp.setText("Đơn giá sản phẩm không được để trống");
-            return;
-        } else if (!ValidationUtil.isNumberic(txt_dongiasp.getText().trim())) {
-            lbl_tbdongiasp.setText("Đơn giá sản phẩm phải là số ");
-            return;
-        } else if (Integer.parseInt(txt_dongiasp.getText().trim()) <= 0) {
-            lbl_tbdongiasp.setText("Đơn giá sản phẩm phải lớn hơn 0");
-            return;
-        }
-
-        int soLuong;
-        if (ValidationUtil.isEmpty(txt_soluongsp.getText().trim())) {
-            lbl_tbsoluong.setText("Số lượng sản phẩm không được để trống");
-            return;
-        } else if (!ValidationUtil.isNumberic(txt_soluongsp.getText().trim())) {
-            lbl_tbsoluong.setText("Số lượng sản phẩm phải là số Nguyên");
-            return;
-        } else if (Integer.parseInt(txt_soluongsp.getText().trim()) <= 0) {
-            lbl_tbsoluong.setText("Số lượng sản phẩm phải lớn hơn 0");
-            return;
-        } else {
-            soLuong = Integer.parseInt(txt_soluongsp.getText().trim());
-        }
-
-        // Xác nhận sửa 
-        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có muốn sửa sản phẩm không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-        if (luachon == JOptionPane.YES_OPTION) {
-            // Gửi ID vào service thay vì tên
-            boolean sua = service_spchitiet.updateSanPham(ma, ten, idLoaiSP, idKichThuoc, idMauSac, idChatLieu, donGia, soLuong);
-            if (sua) {
-                JOptionPane.showMessageDialog(this, "Sửa sản phẩm thành công.");
-                // Cập nhật lại bảng sau khi thêm
-                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
-            } else {
-                JOptionPane.showMessageDialog(this, "Sửa thất bại.");
-            }
-        }
-    }//GEN-LAST:event_btn_suaspctActionPerformed
-
-    private void btn_resetthongtinchitietspActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetthongtinchitietspActionPerformed
-        txt_maspct.setText("");
-        txt_tenspct.setText("");
-        txt_dongiasp.setText("");
-        txt_soluongsp.setText("");
-        lbl_tbmasp.setText("");
-        lbl_tbtensp.setText("");
+    private void txt_dongiaspCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_dongiaspCaretUpdate
         lbl_tbdongiasp.setText("");
-        lbl_tbsoluong.setText("");
-        cbx_chatlieu.setSelectedIndex(0);
-        cbx_kichthuoc.setSelectedIndex(0);
-        cbx_loaisanpham.setSelectedIndex(0);
-        cbx_mausac.setSelectedIndex(0);
-           txt_maspct.setEditable(true);
-    }//GEN-LAST:event_btn_resetthongtinchitietspActionPerformed
+    }//GEN-LAST:event_txt_dongiaspCaretUpdate
 
-    private void btn_xoaspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_xoaspctActionPerformed
-        int selectedRow = tbl_spchitiet.getSelectedRow();
-        String ma = txt_maspct.getText().trim();
+    private void txt_tenspctCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_tenspctCaretUpdate
+        lbl_tbtensp.setText("");
+    }//GEN-LAST:event_txt_tenspctCaretUpdate
 
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm cần xóa!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-            return;
+    private void txt_maspctCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txt_maspctCaretUpdate
+        lbl_tbmasp.setText("");
+    }//GEN-LAST:event_txt_maspctCaretUpdate
+
+    private void btn_themnhanhloaispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themnhanhloaispActionPerformed
+       // Mở cửa sổ ThemNhanhTT và truyền đối tượng HomeView cùng callback vào
+    ThemNhanhTT themnhanh = new ThemNhanhTT(this, new Runnable() {
+        @Override
+        public void run() {
+            // Sau khi cửa sổ ThemNhanhTT đóng và thao tác thêm thuộc tính thành công
+            loadComboboxLoaiSanPham();
+            loadComboboxLoaiMauSac();
+            loadComboboxLoaiKichThuoc();
+            loadComboboxLoaiChatlieu();
+            xuLyChonRadioButton();  // Cập nhật lại bảng sau khi thêm
         }
-        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa sản phẩm không?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-        if (luachon == JOptionPane.YES_OPTION) {
-            // Gửi ID vào service thay vì tên
-            boolean xoa = service_spchitiet.xoaSPCT(ma);
-            if (xoa) {
-                JOptionPane.showMessageDialog(this, "Xóa sản phẩm thành công.");
-                // Cập nhật lại bảng sau khi thêm
-                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
-            } else {
-                JOptionPane.showMessageDialog(this, "Xóa thất bại.");
-            }
+    });
+
+    // Set lựa chọn radio button để chọn bảng đúng
+    rdo_loaisp.setSelected(true); // Chọn Loại sản phẩm
+
+    // Lấy tên bảng sau khi đã chọn radio button
+    String tableName = getSelectedTableName();  // Lấy tên bảng từ radio button được chọn
+    
+    // Truyền tên bảng vào ThemNhanhTT
+    themnhanh.setSelectedTableName(tableName);
+    themnhanh.setVisible(true);
+    }//GEN-LAST:event_btn_themnhanhloaispActionPerformed
+
+    private void btn_themnhanhmausacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themnhanhmausacActionPerformed
+         // Mở cửa sổ ThemNhanhTT và truyền đối tượng HomeView cùng callback vào
+    ThemNhanhTT themnhanh = new ThemNhanhTT(this, new Runnable() {
+        @Override
+        public void run() {
+            // Sau khi cửa sổ ThemNhanhTT đóng và thao tác thêm thuộc tính thành công
+            loadComboboxLoaiSanPham();
+            loadComboboxLoaiMauSac();
+            loadComboboxLoaiKichThuoc();
+            loadComboboxLoaiChatlieu();
+            xuLyChonRadioButton();  // Cập nhật lại bảng sau khi thêm
         }
+    });
 
-    }//GEN-LAST:event_btn_xoaspctActionPerformed
+    // Set lựa chọn radio button để chọn bảng đúng
+    rdo_mausac.setSelected(true); // Chọn Loại sản phẩm
 
-    private void btn_spctdaxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_spctdaxoaActionPerformed
-        btn_khoiphucspct.setVisible(true);
-        fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTietDaXoa());
-        lbl_ttspct.setText("THÔNG TIN SẢN PHẨM ĐÃ XÓA");
-        btn_trovespct.setVisible(true);
-    }//GEN-LAST:event_btn_spctdaxoaActionPerformed
+    // Lấy tên bảng sau khi đã chọn radio button
+    String tableName = getSelectedTableName();  // Lấy tên bảng từ radio button được chọn
+    
+    // Truyền tên bảng vào ThemNhanhTT
+    themnhanh.setSelectedTableName(tableName);
+    themnhanh.setVisible(true);
+    }//GEN-LAST:event_btn_themnhanhmausacActionPerformed
 
-    private void btn_khoiphucspctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_khoiphucspctActionPerformed
-        int chon = tbl_spchitiet.getSelectedRow();
-
-        if (chon == -1) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn một sản phẩm để khôi phục!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-            return;
+    private void btn_themnhanhkichthuocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themnhanhkichthuocActionPerformed
+        // Mở cửa sổ ThemNhanhTT và truyền đối tượng HomeView cùng callback vào
+    ThemNhanhTT themnhanh = new ThemNhanhTT(this, new Runnable() {
+        @Override
+        public void run() {
+            // Sau khi cửa sổ ThemNhanhTT đóng và thao tác thêm thuộc tính thành công
+            loadComboboxLoaiSanPham();
+            loadComboboxLoaiMauSac();
+            loadComboboxLoaiKichThuoc();
+            loadComboboxLoaiChatlieu();
+            xuLyChonRadioButton();  // Cập nhật lại bảng sau khi thêm
         }
+    });
 
-        String ma = txt_maspct.getText().trim();
+    // Set lựa chọn radio button để chọn bảng đúng
+    rdo_kichthuoc.setSelected(true); // Chọn Loại sản phẩm
 
-        // Lấy giá trị từ JComboBox
-        String tenLoaiSP = cbx_loaisanpham.getSelectedItem().toString();
-        String tenKichThuoc = cbx_kichthuoc.getSelectedItem().toString();
-        String tenMauSac = cbx_mausac.getSelectedItem().toString();
-        String tenChatLieu = cbx_chatlieu.getSelectedItem().toString();
+    // Lấy tên bảng sau khi đã chọn radio button
+    String tableName = getSelectedTableName();  // Lấy tên bảng từ radio button được chọn
+    
+    // Truyền tên bảng vào ThemNhanhTT
+    themnhanh.setSelectedTableName(tableName);
+    themnhanh.setVisible(true);
+    }//GEN-LAST:event_btn_themnhanhkichthuocActionPerformed
 
-        // Lấy ID từ HashMap (cần tạo HashMap ở bước trước)
-        int idLoaiSP = sanPhamMap.get(tenLoaiSP);
-        int idKichThuoc = kichThuocMap.get(tenKichThuoc);
-        int idMauSac = mauSacMap.get(tenMauSac);
-        int idChatLieu = chatLieuMap.get(tenChatLieu);
-
-        // Hỏi xác nhận trước khi xóa
-        int luachon = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn khôi phục ?", "Xác nhận", JOptionPane.YES_NO_OPTION);
-        if (luachon == JOptionPane.YES_OPTION) {
-            boolean khoiPhucThanhCong = service_spchitiet.khoiPhucDaXoaSPCT(ma, idLoaiSP, idMauSac, idChatLieu, idKichThuoc);
-
-            if (khoiPhucThanhCong) {
-                JOptionPane.showMessageDialog(this, "Khôi phục sản phẩm thành công!");
-
-                fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTietDaXoa());
-
-            } else {
-                JOptionPane.showMessageDialog(this, "Khôi phục thất bại. Vui lòng thử lại!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            }
+    private void btn_themnhanhchatlieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themnhanhchatlieuActionPerformed
+        // Mở cửa sổ ThemNhanhTT và truyền đối tượng HomeView cùng callback vào
+    ThemNhanhTT themnhanh = new ThemNhanhTT(this, new Runnable() {
+        @Override
+        public void run() {
+            // Sau khi cửa sổ ThemNhanhTT đóng và thao tác thêm thuộc tính thành công
+            loadComboboxLoaiSanPham();
+            loadComboboxLoaiMauSac();
+            loadComboboxLoaiKichThuoc();
+            loadComboboxLoaiChatlieu();
+            xuLyChonRadioButton();  // Cập nhật lại bảng sau khi thêm
         }
-    }//GEN-LAST:event_btn_khoiphucspctActionPerformed
+    });
 
-    private void btn_backthuoctinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backthuoctinhActionPerformed
-        btn_khoiphucthuoctinh.setVisible(false);
-        btn_backthuoctinh.setVisible(false);
-        xuLyChonRadioButton();  // Cập nhật lại bảng sau khi xóa
-        fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
-        lbl_dsthuoctinh.setText("DANH SÁCH THUỘC TÍNH");
-    }//GEN-LAST:event_btn_backthuoctinhActionPerformed
+    // Set lựa chọn radio button để chọn bảng đúng
+    rdo_chatlieu.setSelected(true); // Chọn Loại sản phẩm
 
-    private void btn_trovespctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trovespctActionPerformed
-        lbl_ttspct.setText("THÔNG TIN SẢN PHẨM ĐANG BÁN");
-         fillTable_SPChiTiet(service_spchitiet.layDanhSachSanPhamChiTiet());
-         btn_trovespct.setVisible(false);
-         btn_khoiphucspct.setVisible(false);
-    }//GEN-LAST:event_btn_trovespctActionPerformed
-
-    private void txt_timkiemsanphamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_timkiemsanphamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_timkiemsanphamActionPerformed
+    // Lấy tên bảng sau khi đã chọn radio button
+    String tableName = getSelectedTableName();  // Lấy tên bảng từ radio button được chọn
+    
+    // Truyền tên bảng vào ThemNhanhTT
+    themnhanh.setSelectedTableName(tableName);
+    themnhanh.setVisible(true);
+    }//GEN-LAST:event_btn_themnhanhchatlieuActionPerformed
 
     private void layDanhSachDaXoa(String tableName, String loaiTt) {
         List<SanPham_ThuocTinh> danhSach = service_spthuoctinh.getThuocTinhDaXoa(tableName);
@@ -1801,6 +1965,10 @@ public void mouseClicked(MouseEvent e) {
     private javax.swing.JButton btn_spctdaxoa;
     private javax.swing.JButton btn_suaspct;
     private javax.swing.JButton btn_suathuoctinh;
+    private javax.swing.JButton btn_themnhanhchatlieu;
+    private javax.swing.JButton btn_themnhanhkichthuoc;
+    private javax.swing.JButton btn_themnhanhloaisp;
+    private javax.swing.JButton btn_themnhanhmausac;
     private javax.swing.JButton btn_themspct;
     private javax.swing.JButton btn_themthuoctinh;
     private javax.swing.JButton btn_trovespct;
@@ -1878,7 +2046,7 @@ public void mouseClicked(MouseEvent e) {
     private javax.swing.JTextField txt_timkiemsanpham;
     // End of variables declaration//GEN-END:variables
 
-    private void loadComboboxLoaiSanPham() {
+    void loadComboboxLoaiSanPham() {
         cbx_loaisanpham.removeAllItems();
         sanPhamMap.clear(); // Xóa dữ liệu cũ
 
@@ -1890,7 +2058,7 @@ public void mouseClicked(MouseEvent e) {
         }
     }
 
-    private void loadComboboxLoaiMauSac() {
+    void loadComboboxLoaiMauSac() {
         cbx_mausac.removeAllItems();
         mauSacMap.clear(); // Xóa dữ liệu cũ
 
@@ -1902,7 +2070,7 @@ public void mouseClicked(MouseEvent e) {
         }
     }
 
-    private void loadComboboxLoaiKichThuoc() {
+    void loadComboboxLoaiKichThuoc() {
         cbx_kichthuoc.removeAllItems();
         kichThuocMap.clear(); // Xóa dữ liệu cũ
 
@@ -1914,7 +2082,7 @@ public void mouseClicked(MouseEvent e) {
         }
     }
 
-    private void loadComboboxLoaiChatlieu() {
+    void loadComboboxLoaiChatlieu() {
         cbx_chatlieu.removeAllItems();
         chatLieuMap.clear(); // Xóa dữ liệu cũ
 
@@ -1926,3 +2094,5 @@ public void mouseClicked(MouseEvent e) {
         }
     }
 }
+
+   
