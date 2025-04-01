@@ -14,4 +14,18 @@ public class ValidationUtil {
         return value == null || value.trim().isEmpty();
     }
     
+    public static boolean isNumberic(String str){
+        try {
+            Integer.parseInt(str);
+            return true;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public static boolean kiemTraMa(String ma){
+        return ma.matches("^[A-Z]{2}\\d{3}$");
+    }
+    
 }

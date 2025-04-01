@@ -7,6 +7,7 @@ package service;
 import dao.NhanVienDAO;
 import model.NhanVien;
 
+
 /**
  *
  * @author phamd
@@ -20,3 +21,5 @@ public interface NhanVienService {
     boolean resetPassword(String email, String newPassword);
     
 }
+
+
