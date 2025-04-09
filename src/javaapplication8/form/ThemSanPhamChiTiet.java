@@ -88,28 +88,24 @@ public class ThemSanPhamChiTiet extends javax.swing.JFrame {
 
         jButton2.setText("Thêm");
 
-        btn_themnhanhloaisp.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
         btn_themnhanhloaisp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_themnhanhloaispActionPerformed(evt);
             }
         });
 
-        btn_themnhanhloaisp1.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
         btn_themnhanhloaisp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_themnhanhloaisp1ActionPerformed(evt);
             }
         });
 
-        btn_themnhanhloaisp2.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
         btn_themnhanhloaisp2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_themnhanhloaisp2ActionPerformed(evt);
             }
         });
 
-        btn_themnhanhloaisp3.setIcon(new javax.swing.ImageIcon("C:\\Users\\dungc\\Desktop\\da1\\+_icon.png")); // NOI18N
         btn_themnhanhloaisp3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_themnhanhloaisp3ActionPerformed(evt);
@@ -186,15 +182,14 @@ public class ThemSanPhamChiTiet extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_themnhanhloaisp)))
+                            .addComponent(btn_themnhanhloaisp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_themnhanhloaisp3)
                         .addGap(1, 1, 1)))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
@@ -216,7 +211,7 @@ public class ThemSanPhamChiTiet extends javax.swing.JFrame {
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_themnhanhloaisp2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
