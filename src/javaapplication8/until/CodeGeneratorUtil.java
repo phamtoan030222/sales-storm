@@ -52,6 +52,7 @@ public class CodeGeneratorUtil {
         return code.toString();
     }
     
+
     public static String generateSanPhamChiTiet(){
         StringBuilder code = new StringBuilder("SPCT-");
         for(int i = 0; i< CODE_LENGTH; i++){

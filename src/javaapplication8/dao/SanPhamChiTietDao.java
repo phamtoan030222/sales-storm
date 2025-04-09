@@ -51,19 +51,23 @@ public class SanPhamChiTietDao {
                 String sp;
                 String mauSac;
                 String kichThuoc;
-                String chatLieu;
+String chatLieu;
                 String donGia;
                 int soLuong;
 
+
                 maSpct = rs.getString(2);
                 sp = rs.getString(3);
+
                 kichThuoc = rs.getString(4);
                 mauSac = rs.getString(5);
                 chatLieu = rs.getString(6);
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
+
                 list.add(new SanPham_ChiTiet(maSpct, sp,kichThuoc, mauSac, chatLieu, donGia, soLuong));
+
             }
             return list;
         } catch (Exception e) {
@@ -189,7 +193,9 @@ public class SanPhamChiTietDao {
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
+
 //                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
+
             }
             return list;
         } catch (Exception e) {
@@ -292,7 +298,9 @@ public class SanPhamChiTietDao {
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
+
 //                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
+
             }
             return list;
         } catch (Exception e) {

@@ -10,8 +10,11 @@
     </Component>
     <Component class="javaapplication8.swing.Table" name="table3">
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
     </Component>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
   </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -36,20 +39,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTabbedPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+=======
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTabbedPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+=======
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
       </Group>
     </DimensionLayout>
   </Layout>
@@ -76,11 +87,20 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+=======
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel4" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel7" min="-2" pref="285" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="356" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -110,6 +130,13 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
+=======
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -121,6 +148,7 @@
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -132,6 +160,9 @@
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="jScrollPane4" min="-2" pref="300" max="-2" attributes="0"/>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
+=======
+                      <EmptySpace pref="431" max="32767" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   </Group>
               </Group>
             </DimensionLayout>
@@ -202,7 +233,11 @@
                               </Group>
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <EmptySpace pref="169" max="32767" attributes="0"/>
+=======
+                          <EmptySpace pref="172" max="32767" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -329,7 +364,11 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="12" style="1"/>
                     </Property>
+<<<<<<< HEAD
                     <Property name="text" type="java.lang.String" value="S&#x1ea3;n ph&#x1ea9;m"/>
+=======
+                    <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i s&#x1ea3;n ph&#x1ea9;m"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
@@ -414,6 +453,7 @@
                 <Property name="text" type="java.lang.String" value="B&#x1ed9; l&#x1ecd;c"/>
               </Properties>
             </Component>
+<<<<<<< HEAD
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xu&#x1ea5;t excel"/>
@@ -529,6 +569,8 @@
                 </Component>
               </SubComponents>
             </Container>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -548,6 +590,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -600,10 +643,14 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+=======
+                  <EmptySpace min="0" pref="1007" max="32767" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -933,6 +980,14 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="panel_danhsachsanpham">
+=======
+                  <EmptySpace min="0" pref="597" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -955,6 +1010,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+=======
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="102" max="-2" attributes="0"/>
+                          <Component id="txt_masanpham" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="txt_tensanpham" min="-2" pref="219" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="295" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btn_themsanpham" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="btn_xoasanpham" min="-2" pref="92" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btn_capnhatsanpham" pref="117" max="32767" attributes="0"/>
+                          <Component id="btn_lammoisanpham" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  </Group>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -976,6 +1059,7 @@
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1025,6 +1109,25 @@
                           <Component id="btn_lammoisanpham" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+=======
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="rdo_tatcasanpham" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="rdo_sanphamdangban" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="rdo_sanphamngungban" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="txt_timkiemsanpham" min="-2" pref="310" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1064,18 +1167,29 @@
                               </Group>
                           </Group>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbl_thongbaotensp" min="-2" pref="21" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdo_tatcasanpham" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                           <Component id="rdo_sanphamdangban" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="rdo_sanphamngungban" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txt_timkiemsanpham" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="lbl_danhsachsanpham" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+=======
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                       <Component id="jScrollPane3" min="-2" pref="228" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1148,7 +1262,11 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
+<<<<<<< HEAD
                 <Component class="javax.swing.JTextArea" name="txt_motasanpham">
+=======
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -1166,9 +1284,12 @@
                   <Border info="null"/>
                 </Property>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_themsanphamActionPerformed"/>
               </Events>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             </Component>
             <Component class="javax.swing.JButton" name="btn_capnhatsanpham">
               <Properties>
@@ -1180,9 +1301,12 @@
                   <Border info="null"/>
                 </Property>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_capnhatsanphamActionPerformed"/>
               </Events>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             </Component>
             <Component class="javax.swing.JButton" name="btn_xoasanpham">
               <Properties>
@@ -1196,7 +1320,10 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="btn_xoasanphamMouseMoved"/>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_xoasanphamActionPerformed"/>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_lammoisanpham">
@@ -1209,9 +1336,12 @@
                   <Border info="null"/>
                 </Property>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_lammoisanphamActionPerformed"/>
               </Events>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -1224,6 +1354,21 @@
                 <Property name="text" type="java.lang.String" value="Tr&#x1ea1;ng th&#xe1;i"/>
               </Properties>
             </Component>
+<<<<<<< HEAD
+=======
+            <Component class="javax.swing.JRadioButton" name="rdo_tatcasanpham">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroup1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="T&#x1ea5;t c&#x1ea3;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rdo_tatcasanphamMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdo_tatcasanphamActionPerformed"/>
+              </Events>
+            </Component>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             <Component class="javax.swing.JRadioButton" name="rdo_sanphamngungban">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -1231,9 +1376,12 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ng&#x1eeb;ng b&#xe1;n"/>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdo_sanphamngungbanActionPerformed"/>
               </Events>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             </Component>
             <Component class="javax.swing.JRadioButton" name="rdo_sanphamdangban">
               <Properties>
@@ -1242,9 +1390,12 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;ang b&#xe1;n"/>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdo_sanphamdangbanActionPerformed"/>
               </Events>
+=======
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
             </Component>
             <Component class="org.jdesktop.swingx.JXTextField" name="txt_timkiemsanpham">
               <Properties>
@@ -1319,6 +1470,7 @@
                 </Property>
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
+<<<<<<< HEAD
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jScrollPane3MouseClicked"/>
               </Events>
@@ -1329,16 +1481,30 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="4">
+=======
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javaapplication8.swing.Table" name="table_sanpham">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="4">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                         <Column editable="true" title="STT" type="java.lang.Object"/>
                         <Column editable="true" title="M&#xe3; s&#x1ea3;n ph&#x1ea9;m" type="java.lang.Object"/>
                         <Column editable="true" title="T&#xea;n s&#x1ea3;n ph&#x1ea9;m" type="java.lang.Object"/>
                         <Column editable="true" title="M&#xf4; t&#x1ea3;" type="java.lang.Object"/>
                         <Column editable="true" title="S&#x1ed1; l&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
                         <Column editable="true" title="Tr&#x1ea1;ng th&#xe1;i" type="java.lang.Object"/>
+<<<<<<< HEAD
+=======
+                        <Column editable="true" title="H&#xe0;nh &#x111;&#x1ed9;ng" type="java.lang.Object"/>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
+<<<<<<< HEAD
                         <Column maxWidth="40" minWidth="40" prefWidth="40" resizable="true">
                           <Title/>
                           <Editor/>
@@ -1350,6 +1516,9 @@
                           <Renderer/>
                         </Column>
                         <Column maxWidth="150" minWidth="150" prefWidth="150" resizable="true">
+=======
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1359,12 +1528,35 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
+<<<<<<< HEAD
                         <Column maxWidth="70" minWidth="70" prefWidth="70" resizable="true">
+=======
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
+<<<<<<< HEAD
                         <Column maxWidth="120" minWidth="120" prefWidth="120" resizable="true">
+=======
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1378,6 +1570,7 @@
                       <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
                     </Property>
                   </Properties>
+<<<<<<< HEAD
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_sanphamMouseClicked"/>
                   </Events>
@@ -1402,6 +1595,11 @@
                 </Property>
               </Properties>
             </Component>
+=======
+                </Component>
+              </SubComponents>
+            </Container>
+>>>>>>> 741dec74f2fc079fc0902b266fe152091cb6d1ea
           </SubComponents>
         </Container>
       </SubComponents>

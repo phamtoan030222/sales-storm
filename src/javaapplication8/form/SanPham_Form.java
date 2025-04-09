@@ -183,6 +183,7 @@ public class SanPham_Form extends javax.swing.JPanel {
                 loaiTt,
                 sp.getTen()});
         }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -738,6 +739,7 @@ public class SanPham_Form extends javax.swing.JPanel {
         panel_danhsachsanpham.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         panel_danhsachsanpham.setOpaque(false);
 
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Mã sản phẩm");
 
@@ -756,6 +758,7 @@ public class SanPham_Form extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Mô tả sản phẩm");
+
 
         txt_motasanpham.setColumns(20);
         txt_motasanpham.setRows(5);
@@ -910,6 +913,8 @@ public class SanPham_Form extends javax.swing.JPanel {
                         .addGap(157, 157, 157)
                         .addComponent(jLabel3))
                     .addGroup(panel_danhsachsanphamLayout.createSequentialGroup()
+
+
                         .addGap(360, 360, 360)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1011,6 +1016,7 @@ public class SanPham_Form extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+
         jTabbedPane1.addTab("Sản phẩm", panel_danhsachsanpham);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -1028,6 +1034,7 @@ public class SanPham_Form extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
+
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1045,11 +1052,13 @@ public class SanPham_Form extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_timkiemsanphamFocusGained
 
     private void txt_timkiemsanphamFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_timkiemsanphamFocusLost
+
         if (txt_timkiemsanpham.getText().isEmpty()) {
             txt_timkiemsanpham.setText("Nhập tên sản phẩm...");
             txt_timkiemsanpham.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txt_timkiemsanphamFocusLost
+
 
     private void rdo_sanphamngungbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdo_sanphamngungbanActionPerformed
         List<Model_SanPham> dsNgungBan = service_sp.layDanhSachSanPhamNgungBan();
@@ -1244,6 +1253,7 @@ public class SanPham_Form extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1262,6 +1272,7 @@ public class SanPham_Form extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1301,11 +1312,16 @@ public class SanPham_Form extends javax.swing.JPanel {
     private javax.swing.JTextArea txt_motasanpham;
     private javax.swing.JTextField txt_tensanpham;
     private javax.swing.JTextField txt_tenthuoctinh;
+
     private org.jdesktop.swingx.JXTextField txt_timkiemsanpham;
     // End of variables declaration//GEN-END:variables
 
     private void customizeTabblePane() {
+
         jTabbedPane1.setUI(new BasicTabbedPaneUI() {
+=======
+        jTabbedPane1.setUI(new BasicTabbedPaneUI(){
+
             @Override
             protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h, boolean isSelected) {
             }
@@ -1324,6 +1340,7 @@ public class SanPham_Form extends javax.swing.JPanel {
 
         });
     }
+
 
 
 }
