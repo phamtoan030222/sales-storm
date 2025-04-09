@@ -27,9 +27,8 @@ public class SanPham_ChiTiet {
     public SanPham_ChiTiet() {
     }
 
-    public SanPham_ChiTiet(String maSp, String tenSp, String loaiSp, String kichThuoc, String mauSac, String chatLieu, String donGia, int soLuong) {
+    public SanPham_ChiTiet(String maSp, String loaiSp, String kichThuoc, String mauSac, String chatLieu, String donGia, int soLuong) {
         this.maSp = maSp;
-        this.tenSp = tenSp;
         this.loaiSp = loaiSp;
         this.kichThuoc = kichThuoc;
         this.mauSac = mauSac;

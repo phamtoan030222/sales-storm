@@ -25,6 +25,33 @@ public class CodeGeneratorUtil {
         return code.toString();
     }
     
+    public static String generateMauSac(){
+        StringBuilder code = new StringBuilder("MS-");
+        for(int i = 0; i< CODE_LENGTH; i++){
+            int index = RANDOM.nextInt(CHARACTERS.length());
+            code.append(CHARACTERS.charAt(index));
+        }
+        return code.toString();
+    }
+    
+    public static String generateKichThuoc(){
+        StringBuilder code = new StringBuilder("KT-");
+        for(int i = 0; i< CODE_LENGTH; i++){
+            int index = RANDOM.nextInt(CHARACTERS.length());
+            code.append(CHARACTERS.charAt(index));
+        }
+        return code.toString();
+    }
+    
+    public static String generateChatLieu(){
+        StringBuilder code = new StringBuilder("CL-");
+        for(int i = 0; i< CODE_LENGTH; i++){
+            int index = RANDOM.nextInt(CHARACTERS.length());
+            code.append(CHARACTERS.charAt(index));
+        }
+        return code.toString();
+    }
+    
     public static String generateSanPhamChiTiet(){
         StringBuilder code = new StringBuilder("SPCT-");
         for(int i = 0; i< CODE_LENGTH; i++){

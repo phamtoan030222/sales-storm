@@ -19,6 +19,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Tạo form
      */
+    
     private Form_Home home;
     private SanPham_Form sanPham_Form;
     private ThongKe_Form thongKe_Form;

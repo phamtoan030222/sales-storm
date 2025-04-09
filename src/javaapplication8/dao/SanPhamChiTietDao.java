@@ -33,41 +33,37 @@ public class SanPhamChiTietDao {
         ArrayList<SanPham_ChiTiet> list = new ArrayList();
 
         sql = """
-              select San_Pham_Chi_Tiet.MA_SPCT, San_Pham_Chi_Tiet.TEN_SP, San_Pham.Ten,
-                  Kich_Thuoc.Ten, Mau_Sac.Ten, Chat_Lieu.Ten, FORMAT(San_Pham_Chi_Tiet.Don_Gia, 'N0') + ' VNĐ' , San_Pham_Chi_Tiet.So_Luong
-              from San_Pham_Chi_Tiet
-              join San_Pham on San_Pham_Chi_Tiet.ID_SAN_PHAM = San_Pham.ID
-              join Kich_Thuoc on San_Pham_Chi_Tiet.ID_Kich_Thuoc = Kich_Thuoc.ID
-              join Mau_Sac on San_Pham_Chi_Tiet.ID_Mau_Sac = Mau_Sac.ID
-              join Chat_Lieu on San_Pham_Chi_Tiet.ID_Chat_Lieu = Chat_Lieu.ID
-               WHERE San_Pham_Chi_Tiet.DA_XOA = 0 AND San_Pham.DA_XOA = 0 AND Kich_Thuoc.DA_XOA = 0 AND Mau_Sac.DA_XOA = 0 AND Chat_Lieu.DA_XOA = 0 
-              
-              
+              SELECT San_Pham_Chi_Tiet.ID, San_Pham_Chi_Tiet.MA_SPCT, San_Pham.TEN, Mau_Sac.TEN, Chat_Lieu.TEN, Kich_Thuoc.TEN, San_Pham_Chi_Tiet.DON_GIA, San_Pham_Chi_Tiet.SO_LUONG
+              FROM San_Pham_Chi_Tiet 
+              JOIN San_Pham ON San_Pham.ID = San_Pham_Chi_Tiet.ID_SAN_PHAM
+              JOIN Mau_Sac ON Mau_Sac.ID = San_Pham_Chi_Tiet.ID_MAU_SAC
+              JOIN Chat_Lieu ON Chat_Lieu.ID = San_Pham_Chi_Tiet.ID_CHAT_LIEU
+              JOIN Kich_Thuoc ON Kich_Thuoc.ID = San_Pham_Chi_Tiet.ID_KICH_THUOC
+              WHERE San_Pham_Chi_Tiet.DA_XOA = 0 AND San_Pham.DA_XOA = 0 AND Mau_Sac.DA_XOA = 0 AND Chat_Lieu.DA_XOA = 0 AND Kich_Thuoc.DA_XOA = 0 
               """;
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
 
-                String maSp;
-                String tenSp;
-                String loaiSp;
-                String kichThuoc;
+                String id;
+                String maSpct;
+                String sp;
                 String mauSac;
+                String kichThuoc;
                 String chatLieu;
                 String donGia;
                 int soLuong;
 
-                maSp = rs.getString(1);
-                tenSp = rs.getString(2);
-                loaiSp = rs.getString(3);
+                maSpct = rs.getString(2);
+                sp = rs.getString(3);
                 kichThuoc = rs.getString(4);
                 mauSac = rs.getString(5);
                 chatLieu = rs.getString(6);
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
-                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
+                list.add(new SanPham_ChiTiet(maSpct, sp,kichThuoc, mauSac, chatLieu, donGia, soLuong));
             }
             return list;
         } catch (Exception e) {
@@ -193,7 +189,7 @@ public class SanPhamChiTietDao {
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
-                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
+//                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
             }
             return list;
         } catch (Exception e) {
@@ -296,7 +292,7 @@ public class SanPhamChiTietDao {
                 donGia = rs.getString(7);
                 soLuong = rs.getInt(8);
 
-                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
+//                list.add(new SanPham_ChiTiet(maSp, tenSp, loaiSp, kichThuoc, mauSac, chatLieu, donGia, soLuong));
             }
             return list;
         } catch (Exception e) {
